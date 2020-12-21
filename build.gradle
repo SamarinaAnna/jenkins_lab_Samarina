@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'jacoco'
 }
 
 repositories {
@@ -25,4 +26,8 @@ allprojects {
             options.compilerArgs << "-Xlint:unchecked"
         }
     }
+}
+
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
 }
